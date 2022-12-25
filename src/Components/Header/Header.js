@@ -20,9 +20,9 @@ const Header = props => {
         </Container>
 
       </Navbar>
-      <Container>
+     
         <Navigation />
-      </Container>
+    
 
     </div>
   )
