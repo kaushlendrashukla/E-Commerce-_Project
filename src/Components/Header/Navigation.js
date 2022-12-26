@@ -1,4 +1,4 @@
-import { Container, Navbar, Nav } from "react-bootstrap"
+import { Nav } from "react-bootstrap"
 import classes from './Navigation.module.css';
 import { NavLink } from "react-router-dom";
 
@@ -9,13 +9,13 @@ const Navigation = () => {
 
           <div className={classes.header} >
          
-               <div className={classes.box}> <NavLink to="/home">Home </NavLink> </div>
+               <div className={classes.box}> <NavLink to="Home">Home </NavLink> </div>
                <div className={classes.box}> <NavLink to="About" >About</NavLink> </div>  
                <div className={classes.box}> <NavLink to="store" >Store</NavLink></div>
                <div className={classes.box}> <Nav.Link href="#Children">Children</Nav.Link></div>
                <div className={classes.box}> <Nav.Link href="#Beauty">Beauty</Nav.Link></div>
                <div className={classes.box}> <Nav.Link href="#Shoes">Shoes</Nav.Link></div>
-               <div className={classes.box}> <NavLink to="contact">Contact</NavLink></div>
+               <div className={classes.box}> <NavLink to="contactUs">Contact Us</NavLink></div>
              
                </div>
       )

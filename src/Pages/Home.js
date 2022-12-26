@@ -1,9 +1,15 @@
 
+import { Container } from "react-bootstrap"
+import AvailableProducts from "../Components/Products/AvailableProducts"
+
 
 const Home = () => {
 
-    return <h1>
-        This is home page
-    </h1>
+    return <div>       
+      
+       <Container>
+        <AvailableProducts />       
+        </Container>
+    </div>
 }
 export default Home

@@ -1,0 +1,125 @@
+body {
+    background-color: #d1f3e7;
+  }
+  
+  #title-Tag-Line {
+    font-size: 20px;
+  }
+  .form {
+    background: #fff;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    border-radius: 5px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    left: 0;
+    right: 0;
+    position: unset;
+    border-top: 5px solid  RGB(35 46 63);
+  /*   z-index: 1; */
+    /* animation: 1.5s infinite; */
+  }
+  ::-webkit-input-placeholder {
+    font-size: 1.3em;
+  }
+  
+  .title{
+    display: block;
+    font-family: sans-serif;
+    margin: 10px auto 5px;
+    width: 300px;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  
+  .secondaryTitle{
+    color: grey;
+  }
+  
+  .name {
+    background-color: #ebebeb;
+    color: white;
+  }
+  .name:hover {
+    border-bottom: 5px solid #0e3721;
+    height: 30px;
+    width: 380px;
+    transition: ease 0.5s;
+  }
+  
+  .email {
+    background-color: #ebebeb;
+    height: 2em;
+  }
+  
+  .email:hover {
+    border-bottom: 5px solid  RGB(35 46 63);
+    height: 30px;
+    width: 380px;
+    transition: ease 0.5s;
+  }
+  
+  .message {
+    background-color: #ebebeb;
+    overflow: hidden;
+    height: 10rem;
+  }
+  
+  .message:hover {
+    border-bottom: 5px solid RGB(35 46 63);
+    height: 12em;
+    width: 380px;
+    transition: ease 0.5s;
+  }
+  
+  .formEntry {
+ 
+    display: block;
+    /* margin: auto; */
+    min-width: 300px;
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    transition: all 0.5s ease 0s;
+    background-color: rgb(148, 158, 147);
+    color: rgb(7, 7, 1);
+    font-size:medium;
+    transition:ease-in-out 0.5s;
+    
+  }
+  
+  .submit {
+    display: flex;
+   justify-content: center;
+    align-items:center;
+  
+   color: white;
+    background-color: RGB(35 46 63);
+    font-size: 20px;
+    
+  
+    width: 300px;
+ 
+    border-radius: 5px;
+  }
+  
+  .submit:hover {
+   
+    background-color: #131921;
+    border-radius: 5px;
+  }
+  
+  @keyframes bounce {
+    0% {
+      tranform: translate(0, 4px);
+    }
+    50% {
+      transform: translate(0, 8px);
+    }
+  } 
+  

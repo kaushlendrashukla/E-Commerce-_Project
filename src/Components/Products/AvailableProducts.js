@@ -1,10 +1,9 @@
 // import Card from "../UI/Card"
-import { Container, Button, Card, ListGroup, Row, Col } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
 import classes from './AvailableProduct.module.css'
-import kurtaImage from '../../Assets/kurta.jpg';
 import { useContext } from "react";
 import CartContext from "../../Store/cart-context";
-import { propTypes } from "react-bootstrap/esm/Image";
+
 
 const productsArr = [
 
@@ -118,12 +117,11 @@ console.log(cartCtx.items)
         <Button style={{margin: 10 }} onClick={() => 
         {
           cartCtx.addItem({
-            // items:product.item,
              id:product.id,  
              title:product.title,
             price: product.price,
             imageUrl: product.imageUrl,
-            amount:1
+            
            })
         }} >
           Add to Cart
