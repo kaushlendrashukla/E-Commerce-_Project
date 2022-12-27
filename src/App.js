@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import { useState } from "react";
 import Cart from "./Components/Cart/Cart";
@@ -7,58 +7,43 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Store from "./Pages/Store";
 import ContactUs from "./Pages/ContactUs";
+import ProductDetails from "./Pages/ProductDetails";
 
- function App () {
-const [cartIsShown, setCartIsShown] = useState(false)
+function App() {
+    const [cartIsShown, setCartIsShown] = useState(false)
 
-const showCartHandler = () =>{
-    setCartIsShown(true)
-}
+    const showCartHandler = () => {
+        setCartIsShown(true)
+    }
 
-const hideCartHandler =() => {
-    setCartIsShown(false)
-}
+    const hideCartHandler = () => {
+        setCartIsShown(false)
+    }
 
     return < CartProvider>
-      
-        <Header onShowCart ={showCartHandler} />
-        <Route path="/Home">
-       <Home />
-      </Route>
-      <Route path="/Store">
-       <Store />
-       </Route>
-      <Route path="/About">
-       <About />
+
+        <Header onShowCart={showCartHandler} />
+    <Switch>
+        <Route path="/home">
+            <Home />
         </Route>
-        <Route path = "/ContactUs">
+        <Route path="/Store">
+            <Store />
+        </Route>
+        <Route path="/About">
+            <About />
+        </Route>
+        <Route path="/ContactUs">
             <ContactUs />
         </Route>
-      
+        <Route path='/productdetails/:productName'>
+              <ProductDetails/>
+            </Route>
+            </Switch>
        
-        {cartIsShown && <Cart onClose = {hideCartHandler}/>}
-       
-    </ CartProvider>
- }
- export default App;
- 
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
 
-//  <Container >
-            
-//         <Card style={{ width: '20rem' }}>
-//         <Card.Img variant="top" src={product.imageUrl}/>
-//         <Card.Body>
-//           <Card.Title>  {product.title}</Card.Title>
-//         </Card.Body>
-//         <ListGroup className="list-group-flush">
-//           <ListGroup.Item> ₹{product.price}</ListGroup.Item>
-//           <div className="d-grid gap-2">
-//       <Button variant="primary" size="lg">
-//        Add to Cart
-//       </Button>
-//       </div>
-//         </ListGroup>
-//       </Card>
-     
-//       <br />
-//       </Container>
+    </ CartProvider>
+}
+export default App;
+

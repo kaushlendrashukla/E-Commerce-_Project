@@ -1,0 +1,12 @@
+.hoverZoom {
+    overflow: hidden;
+  }
+  
+  .hoverZoom img {
+    transition: all 0.3s ease 0s;
+    width: 100%;
+  }
+  
+  .hoverZoom img:hover {
+    transform: scale(1.25);
+  }
