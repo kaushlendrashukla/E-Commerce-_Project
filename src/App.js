@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import { useState ,useContext } from "react";
 import Cart from "./Components/Cart/Cart";
@@ -27,7 +27,8 @@ function App() {
         <Header onShowCart={showCartHandler} />
     <Switch>
         <Route path="/" exact>
-            <Home />
+           {authCtx.isLoggedIn && <Home />}
+           {!authCtx.isLoggedIn &&  <Redirect to= "/login" />}
         </Route>
         <Route path="/Store"  >
             <Store />
@@ -44,6 +45,9 @@ function App() {
           {!authCtx.isLoggedIn &&  <Route path='/login'>
             <Login/>
             </Route>}
+            <Route path = "*">
+          <Redirect to= "/" />
+        </Route>
             </Switch>
        
         {cartIsShown && <Cart onClose={hideCartHandler} />}
