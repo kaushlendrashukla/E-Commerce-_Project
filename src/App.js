@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header/Header";
-import { useState } from "react";
+import { useState ,useContext } from "react";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./Store/CartProvider";
 import About from "./Pages/About";
@@ -8,8 +8,10 @@ import Home from "./Pages/Home";
 import Store from "./Pages/Store";
 import ContactUs from "./Pages/ContactUs";
 import ProductDetails from "./Pages/ProductDetails";
-
+import Login from "./Authentication/Login";
+import AuthContext from "./Authentication/AuthContext";
 function App() {
+    const authCtx = useContext(AuthContext)
     const [cartIsShown, setCartIsShown] = useState(false)
 
     const showCartHandler = () => {
@@ -24,10 +26,10 @@ function App() {
 
         <Header onShowCart={showCartHandler} />
     <Switch>
-        <Route path="/home">
+        <Route path="/" exact>
             <Home />
         </Route>
-        <Route path="/Store">
+        <Route path="/Store"  >
             <Store />
         </Route>
         <Route path="/About">
@@ -39,6 +41,9 @@ function App() {
         <Route path='/productdetails/:productName'>
               <ProductDetails/>
             </Route>
+          {!authCtx.isLoggedIn &&  <Route path='/login'>
+            <Login/>
+            </Route>}
             </Switch>
        
         {cartIsShown && <Cart onClose={hideCartHandler} />}
