@@ -22,7 +22,7 @@ return  <button className={classes.button} onClick={props.onClick} >
     <CartIcon />
 </span>
 <span> Cart</span>
-<span className={classes.badge}>{numberOfCartItems}</span>
+{/* <span className={classes.badge}>{numberOfCartItems}</span> */}
 </button>
 }
 export default CartIconButton;

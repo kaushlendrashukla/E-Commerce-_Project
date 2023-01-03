@@ -102,6 +102,18 @@ console.log(cartCtx.items)
 
 
   // }
+  // const addItemToCart = (event) => {
+  //   event.preventDefault();
+
+  //   const data = {
+  //     key: props.key,
+  //     title: props.title,
+  //     price: props.price,
+  //     _id: props._id,
+  //     url: props.url,
+  //     quantity: props.quantity,
+  //   };
+  // }
   const productsList = productsArr.map(product =>
     <div>
       
@@ -121,14 +133,38 @@ console.log(cartCtx.items)
         
         <Button style={{margin: 10 }} onClick={() => 
         {
-          cartCtx.addItem({
+          const data = {
+         
              id:product.id,  
              title:product.title,
             price: product.price,
-            imageUrl: product.imageUrl,
+            imageUrl: product.imageUrl,          
+           }
+           cartCtx.addItem(data)
+           fetch(
+            "https://crudcrud.com/api/c35759093f0c4fa4aa416ec57339d54d/kaushlendrashukla2015gmailcom",
+
+           {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          ).then((res) => {
+              if (res.ok) {
+                return res.json();
+              }
+            })
+            .then((data) => {
+              console.log("idd", data.id);
             
-           })
-        }} >
+            })
+            .catch((err) => {
+              alert(err);
+            });
+        }} > 
+        
           Add to Cart
         </Button>
       </Card.Body>
